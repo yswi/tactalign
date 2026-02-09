@@ -84,24 +84,24 @@
             <span class="author-block">
               <a href="https://sites.google.com/umich.edu/youngsun-wi/home">Youngsun Wi</a><sup>1</sup><sup style="font-style: normal;">†</sup>,</span>
             <span class="author-block">
-              <a href="https://www.jessicayin.com/">Jessica Yin</a><sup>2</sup>,</span>
+              <a href="https://www.jessicayin.com/">Jessica Yin</a><sup>2</sup><sup style="font-style: normal;">†</sup>,</span>
             <span class="author-block">
               <a href="">Elvis Xiang</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://akashsharma02.github.io/">Akash Sharma</a><sup>3</sup>,
+              <a href="https://akashsharma02.github.io/">Akash Sharma</a><sup>3</sup><sup style="font-style: normal;">†</sup>,
             </span>
             <span class="author-block">
-              <a href="https://people.eecs.berkeley.edu/~malik/">Jitendra Malik</a><sup>4</sup>,
+              <a href="https://people.eecs.berkeley.edu/~malik/">Jitendra Malik</a><sup>4</sup><sup style="font-style: normal;">†</sup>,
             </span>
             <span class="author-block">
-              <a href="https://www.mustafamukadam.com/">Mustafa Muskadam</a><sup>5</sup>,
+              <a href="https://www.mustafamukadam.com/">Mustafa Muskadam</a><sup>5</sup><sup style="font-style: normal;">†</sup>,
             </span>
             <span class="author-block">
               <a href="https://www.mmintlab.com/people/nima-fazeli/">Nima Fazeli*</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://www.tesshellebrekers.com/">Tess Hellebrekers*</a><sup>6</sup>
+              <a href="https://www.tesshellebrekers.com/">Tess Hellebrekers*</a><sup>6</sup><sup style="font-style: normal;">†</sup>,
             </span>
           </div>
 
@@ -313,6 +313,11 @@
             var label = document.getElementById('trajectory-step-label');
             slider.max = TOTAL - 1;
 
+            var isAutoPlaying = false;
+            var autoPlayInterval = null;
+            var currentStep = 0;
+            var autoPlaySpeed = 50; // milliseconds between frames
+
             function draw(val) {
               if (!frames[val] || !frames[val].complete) return;
               var img = frames[val];
@@ -324,8 +329,40 @@
             }
 
             function update() {
-              draw(parseInt(slider.value, 10));
+              currentStep = parseInt(slider.value, 10);
+              draw(currentStep);
             }
+
+            function stopAutoPlay() {
+              if (autoPlayInterval) {
+                clearInterval(autoPlayInterval);
+                autoPlayInterval = null;
+              }
+              isAutoPlaying = false;
+            }
+
+            function startAutoPlay() {
+              if (isAutoPlaying || loaded < TOTAL) return;
+              isAutoPlaying = true;
+              
+              autoPlayInterval = setInterval(function() {
+                currentStep = (currentStep + 1) % TOTAL;
+                slider.value = currentStep;
+                update();
+              }, autoPlaySpeed);
+            }
+
+            // Stop auto-play when user interacts with slider
+            slider.addEventListener('mousedown', stopAutoPlay);
+            slider.addEventListener('touchstart', stopAutoPlay);
+            slider.addEventListener('input', function() {
+              stopAutoPlay();
+              update();
+            });
+            slider.addEventListener('change', function() {
+              stopAutoPlay();
+              update();
+            });
 
             // Preload all frames
             for (var i = 0; i < TOTAL; i++) {
@@ -334,14 +371,32 @@
                 img.onload = function() {
                   loaded++;
                   if (idx === 0) draw(0);
+                  // Start auto-play when all frames are loaded
+                  if (loaded === TOTAL) {
+                    // Use Intersection Observer to start auto-play when section is visible
+                    var observer = new IntersectionObserver(function(entries) {
+                      entries.forEach(function(entry) {
+                        if (entry.isIntersecting && !isAutoPlaying) {
+                          startAutoPlay();
+                        } else if (!entry.isIntersecting && isAutoPlaying) {
+                          stopAutoPlay();
+                        }
+                      });
+                    }, { threshold: 0.3 });
+                    
+                    var section = slider.closest('.section');
+                    if (section) {
+                      observer.observe(section);
+                    } else {
+                      // Fallback: start auto-play immediately
+                      setTimeout(startAutoPlay, 500);
+                    }
+                  }
                 };
                 img.src = BASE + String(idx + 1).padStart(6, '0') + '.jpg';
                 frames[idx] = img;
               })(i);
             }
-
-            slider.addEventListener('input', update);
-            slider.addEventListener('change', update);
           })();
         </script>
         <!--/ Trajectory Evolution. -->
@@ -369,7 +424,7 @@
       <p>
         For each task, we collect 140–160 human demonstrations, where 100 demonstrations (≈ 30 minutes) 
         are from the same object seen by the robot ("seen-to-both" object), and 20 demonstrations are collected for each additional 
-        "human-only" object (≈ 5 minutes per object). For robot data, we collect 50 via kinesthetic using a single training object (≈ 60 minutes).
+        "human-only" object (≈ 5 minutes per object). For robot data, we collect 50 using a single training object (≈ 60 minutes).
       </p>
     </div>
 
@@ -594,8 +649,8 @@
         <p class="is-size-6" style="color:#666;">
           Comparison of co-training results across different methods: Robot-only (blue), Without Tactile (orange), Without Alignment (green), and TactAlign (red). 
           Results are shown as average success rates and broken down by object categories (Seen by both, Seen by tactile, Held-out). 
-          We observe that augmenting robot training with human demonstrations, which are substantially easier to collect and ≈4× faster in our setting, 
-          markedly improves generalization to unseen objects.
+          <em>We observe that augmenting robot training with human demonstrations, which are substantially easier to collect and ≈4× faster in our setting, 
+          markedly improves generalization to unseen objects.</em>
         </p>
       </div>
       <div class="columns is-centered" style="margin:0;gap:0;">
@@ -620,7 +675,7 @@
       <p class="is-size-6" style="color:#666;">
         Our light bulb screwing task highlights two key aspects of human-to-robot transfer: (1) the dexterity enabled by human demonstrations, 
         in which demonstrators rely on tactile feedback to guide precise finger motions during screwing, 
-        and (2) zero-shot human-to-robot policy execution. Video Speed: 8x
+        and (2) zero-shot human-to-robot policy execution. (Demo Speed: 2x, Video Speed: 8x)
       </p>
     </div>
 
