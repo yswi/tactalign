@@ -2,6 +2,38 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
+/* Color-coded object buttons in cotraining section */
+#object-buttons .button.obj-seen {
+  border-color: #48c774 !important;
+  color: #48c774 !important;
+  background-color: transparent !important;
+}
+#object-buttons .button.obj-seen.is-active-obj {
+  background-color: #48c774 !important;
+  color: #fff !important;
+  border-color: #48c774 !important;
+}
+#object-buttons .button.obj-human {
+  border-color: #d4a017 !important;
+  color: #d4a017 !important;
+  background-color: transparent !important;
+}
+#object-buttons .button.obj-human.is-active-obj {
+  background-color: #d4a017 !important;
+  color: #fff !important;
+  border-color: #d4a017 !important;
+}
+#object-buttons .button.obj-unseen {
+  border-color: #f14668 !important;
+  color: #f14668 !important;
+  background-color: transparent !important;
+}
+#object-buttons .button.obj-unseen.is-active-obj {
+  background-color: #f14668 !important;
+  color: #fff !important;
+  border-color: #f14668 !important;
+}
+
 
 .footer .icon-link {
     font-size: 25px;
@@ -16,6 +48,7 @@ body {
 .dnerf {
   font-variant: small-caps;
 }
+
 
 
 .teaser .hero-body {
@@ -131,6 +164,39 @@ body {
 .interpolation-panel {
   background: #f5f5f5;
   border-radius: 10px;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Consistent section spacing */
+.section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* Consistent heading margins */
+.title.is-3 {
+  margin-bottom: 1.5rem;
+}
+
+.title.is-4 {
+  margin-bottom: 1rem;
+}
+
+.title.is-6 {
+  margin-bottom: 0.75rem;
+}
+
+/* Consistent container max-width */
+.container.is-max-desktop {
+  max-width: 1152px;
+}
+
+/* Remove spacing between co-training result figures */
+.columns.is-centered[style*="gap:0"] .column {
+  padding-left: 0.25rem !important;
+  padding-right: 0.25rem !important;
 }
 
 .interpolation-panel .interpolation-image {

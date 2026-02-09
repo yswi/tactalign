@@ -1,16 +1,16 @@
-# Nerfies
+# TactAlign
 
-This is the repository that contains source code for the [Nerfies website](https://yswi.github.io/tactalign).
+This is the repository that contains source code for the [TactAlign website](https://yswi.github.io/tactalign).
 
 Enable GitHub Pages for this repo (Settings → Pages → source: main branch) to view the site at that URL.
 
-If you find Nerfies useful for your work please cite:
+If you find TactAlign useful for your work please cite:
 ```
-@article{park2021nerfies
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+@article{tactalign,
+  author    = {Wi, Youngsun and Yin, Jessica and Xiang, Elvis and Sharma, Akash and Malik, Jitendra and Muskadam, Mustafa and Fazeli, Nima and Hellebrekers, Tess},
+  title     = {TactAlign: Human-to-Robot Policy Transfer via Tactile Alignment},
+  journal   = {arXiv},
+  year      = {2025},
 }
 ```
 

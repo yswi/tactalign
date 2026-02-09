@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+        content="TactAlign: Human-to-Robot Policy Transfer via Tactile Alignment.">
+  <meta name="keywords" content="TactAlign, tactile, human-to-robot, policy transfer">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nerfies: Deformable Neural Radiance Fields</title>
+  <title>TactAlign: Human-to-Robot Policy Transfer via Tactile Alignment</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -28,14 +28,14 @@
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIRwZOqI8NBDhvRI9LExenBUdvHlgGnxpiDKxtpPOCDbMkuPbUovNugbONdPAvMGzx" crossorigin="anonymous">
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/favicon.svg">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" integrity="sha512-F5QTlBqZlvuBEs9LAPqc1zZvs2SYg6iqEUF1hFdmHw9uFzzlTkcL/8Z0WtMqMN5FJ9ggH1pY4+8n2B45b5vLg==" crossorigin="anonymous"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
@@ -63,17 +63,8 @@
           More Research
         </a>
         <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
-          </a>
-          <a class="navbar-item" href="https://tactalign.github.io">
-            Tactalign
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
+          <a class="navbar-item" href="https://www.jessicayin.com/osmo_tactile_glove/">
+            OSMO Tactile Glove
           </a>
         </div>
       </div>
@@ -88,38 +79,50 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Nerfies: Deformable Neural Radiance Fields</h1>
+          <h1 class="title is-1 publication-title">TactAlign: Human-to-Robot Policy Transfer via Tactile Alignment</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
+              <a href="https://sites.google.com/umich.edu/youngsun-wi/home">Youngsun Wi</a><sup>1</sup><sup style="font-style: normal;">†</sup>,</span>
             <span class="author-block">
-              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
+              <a href="https://www.jessicayin.com/">Jessica Yin</a><sup>2</sup>,</span>
             <span class="author-block">
-              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
+              <a href="https://jonbarron.info">Elvis Xiang</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
+              <a href="https://jonbarron.info">Akash Sharma</a><sup>3</sup>,
             </span>
             <span class="author-block">
-              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
+              <a href="http://sofienbouaziz.com">Jitendra Malik</a><sup>4</sup>,
             </span>
             <span class="author-block">
-              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
+              <a href="https://www.danbgoldman.com">Mustafa Muskadam</a><sup>5</sup>,
             </span>
             <span class="author-block">
-              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
+              <a href="https://homes.cs.washington.edu/~seitz/">Nima Fazeli*</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.tesshellebrekers.com/">Tess Hellebrekers*</a><sup>6</sup>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of Washington,</span>
-            <span class="author-block"><sup>2</sup>Google Research</span>
+            <span class="author-block"><sup>1</sup>University of Michigan,</span>
+            <span class="author-block"><sup>2</sup>NVIDIA</span>
+            <span class="author-block"><sup>3</sup>Amazon Frontier AI & Robotics</span>
+            <span class="author-block"><sup>4</sup>UC Berkeley</span>
+            <span class="author-block"><sup>5</sup>Amazon Robotics</span>
+            <span class="author-block"><sup>6</sup>Microsoft Research</span>
           </div>
+
+          <p class="is-size-6 has-text-centered" style="margin-top: 0.5rem;">
+            <sup>†</sup> This work was done during Youngsun Wi's Meta FAIR Internship.
+            <sup>*</sup> Equal advising.
+          </p>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://arxiv.org/pdf/2011.12948"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -127,7 +130,7 @@
                   </span>
                   <span>Paper</span>
                 </a>
-              </span>
+              </span> -->
               <span class="link-block">
                 <a href="https://arxiv.org/abs/2011.12948"
                    class="external-link button is-normal is-rounded is-dark">
@@ -158,14 +161,14 @@
                   </a>
               </span>
               <!-- Dataset Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://github.com/google/tactalign/releases/tag/0.1"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
                   </span>
                   <span>Data</span>
-                  </a>
+                  </a> -->
             </div>
 
           </div>
@@ -175,7 +178,16 @@
   </div>
 </section>
 
-<section class="hero teaser">
+<!-- Teaser Figure -->
+<section class="hero">
+  <div class="container is-max-desktop">
+    <div class="hero-body" style="padding-top:0;">
+      <img src="./static/media/images/tactalign_teaser.jpg" alt="TactAlign teaser figure" style="width:100%;height:auto;">
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video id="teaser" autoplay muted loop playsinline height="100%">
@@ -183,71 +195,14 @@
                 type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
+        <span class="dnerf">TactAlign</span> enables human-to-robot policy transfer
+        via tactile alignment.
       </h2>
     </div>
   </div>
-</section>
+</section> -->
 
 
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 
 <section class="section">
@@ -255,200 +210,465 @@
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3 has-text-centered">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
+            We present <span class="dnerf">TactAlign</span>, a cross-sensor tactile alignment method for cross-embodiment human-to-robot policy transfer. 
           </p>
           <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
+            Human demonstrations collected by wearable devices (e.g., tactile gloves) 
+            provide fast and dexterous supervision for policy learning, 
+            and are guided by rich, natural tactile feedback. 
+            However, a key challenge is how to transfer human-collected tactile signals to robots despite the differences in 
+            sensing modalities and embodiment. Existing human-to-robot (H2R) approaches that incorporate touch often assume 
+            identical tactile sensors, require paired data, and involve little to no embodiment gap between human demonstrator 
+            and the robots, limiting scalability and generality. TactAlign transforms human and robot tactile observations into 
+            an shared latent representation using a rectified flow, without paired datasets, manual labels, or privileged information. 
+            Our method enables low-cost latent transport guided by hand-object interaction-derived pseudo-pairs.
           </p>
           <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            We demonstrate that <span class="dnerf">TactAlign</span> improves H2R policy transfer across multiple contact-rich tasks 
+            (pivoting, insertion, lid closing), generalizes to unseen objects and tasks with human data (&leq; 5 minutes), 
+            and enables zero-shot H2R transfer on a highly dexterous tasks (light bulb screwing)
           </p>
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
 
-    <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-    <!--/ Paper video. -->
   </div>
 </section>
 
-
+<!-- Rectified Flow -->
 <section class="section">
   <div class="container is-max-desktop">
 
-    <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <!--/ Matting. -->
-
-    <!-- Animation. -->
+    <!-- Rectified Flow. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
+        <h2 class="title is-3 has-text-centered">Cross-Sensor Tactile Alignment</h2>
 
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
-        <div class="content has-text-justified">
+        <!-- Trajectory Evolution. -->
+        <h3 class="title is-4 has-text-centered" style="margin-top:2rem;">UMAP projection of Human to Robot Tactile Features</h3>
+        <div class="content has-text-justified" style="margin-top:1rem;max-width:900px;margin-left:auto;margin-right:auto;">
           <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
+            Rectified flow maps the glove latent distribution to overlap with the robot distribution. 
+            Colors denote normalized raw tactile magnitude (0: no contact, 1: highest force/shear), 
+            computed separately for glove and robot data. 
           </p>
         </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
+        <!-- Distribution Comparison. -->
+        <div class="columns is-vcentered interpolation-panel" style="margin-top:1.5rem;padding-top:1rem;padding-bottom:1rem;">
+          <div class="column is-one-third has-text-centered">
+            <p class="title is-6" style="margin-bottom:0.5rem;">[Source] Human Tactile Features</p>
+            <div style="height:280px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+              <img src="./static/media/images/trajectory_evolution_gif/000001.jpg"
+                    class="interpolation-image"
+                    alt="Human tactile features distribution."
+                    style="max-width:100%;max-height:280px;width:auto;height:auto;object-fit:contain;display:block;"/>
             </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
           </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
+          <div class="column is-one-third has-text-centered">
+            <p class="title is-6" style="margin-bottom:0.5rem;">[Target] Robot Tactile Features</p>
+            <div style="height:280px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+              <img src="./static/media/rectified_flow/robot_dist.png"
+                    class="interpolation-image"
+                    alt="Robot tactile features distribution."
+                    style="max-width:100%;max-height:280px;width:auto;height:auto;object-fit:contain;display:block;"/>
+            </div>
+          </div>
+          <div class="column is-one-third has-text-centered">
+            <p class="title is-6" style="margin-bottom:0.5rem;">[Result] Overlaid Distribution</p>
+            <div style="height:280px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+              <img src="./static/media/rectified_flow/overlaid.png"
+                    class="interpolation-image"
+                    alt="Overlaid distribution result."
+                    style="max-width:100%;max-height:280px;width:auto;height:auto;object-fit:contain;display:block;"/>
+            </div>
           </div>
         </div>
-        <br/>
-        <!--/ Interpolating. -->
+        <!--/ Distribution Comparison. -->
+        
+        <h3 class="title is-4 has-text-centered" style="margin-top:3rem;">Rectified Flow from Human to Robot Tactile Features</h3>
+        <div class="columns is-centered" style="margin-top:1.5rem;">
+          <div class="column is-two-thirds has-text-centered">
+            <p id="trajectory-step-label" class="title is-6" style="margin-bottom:0.75rem;">Step = 0</p>
+            <div id="trajectory-evolution-wrapper" style="height:320px;display:flex;align-items:center;justify-content:center;">
+              <canvas id="trajectory-evolution-canvas" style="max-width:100%;max-height:100%;width:auto;height:auto;display:block;"></canvas>
+            </div>
+            <input type="range" id="trajectory-evolution-slider"
+                   step="1" min="0" max="100" value="0"
+                   style="width:100%;cursor:pointer;margin-top:0.75rem;">
+          </div>
+        </div>
+        <script>
+          (function() {
+            var BASE = './static/media/images/trajectory_evolution_gif/';
+            var TOTAL = 101;
+            var frames = [];
+            var loaded = 0;
+            var slider = document.getElementById('trajectory-evolution-slider');
+            var canvas = document.getElementById('trajectory-evolution-canvas');
+            var ctx = canvas.getContext('2d');
+            var label = document.getElementById('trajectory-step-label');
+            slider.max = TOTAL - 1;
 
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <!--/ Re-rendering. -->
+            function draw(val) {
+              if (!frames[val] || !frames[val].complete) return;
+              var img = frames[val];
+              // Set canvas to natural image size, CSS will handle scaling
+              canvas.width = img.naturalWidth;
+              canvas.height = img.naturalHeight;
+              ctx.drawImage(img, 0, 0);
+              label.textContent = 'Step = ' + val;
+            }
+
+            function update() {
+              draw(parseInt(slider.value, 10));
+            }
+
+            // Preload all frames
+            for (var i = 0; i < TOTAL; i++) {
+              (function(idx) {
+                var img = new Image();
+                img.onload = function() {
+                  loaded++;
+                  if (idx === 0) draw(0);
+                };
+                img.src = BASE + String(idx + 1).padStart(6, '0') + '.jpg';
+                frames[idx] = img;
+              })(i);
+            }
+
+            slider.addEventListener('input', update);
+            slider.addEventListener('change', update);
+          })();
+        </script>
+        <!--/ Trajectory Evolution. -->
+
 
       </div>
     </div>
-    <!--/ Animation. -->
-
-
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Concurrent Work. -->
+    <!--/ Rectified Flow. -->
 
   </div>
 </section>
+
+<!-- Human-Robot Cotraining -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Human-Robot Cotraining</h2>
+    
+    <div class="content has-text-justified" style="margin-top:1.5rem;margin-bottom:2rem;max-width:900px;margin-left:auto;margin-right:auto;">
+      <p>
+        We evaluate the effectiveness of TactAlign for H2R policy co-training on three representative contact-rich manipulation tasks: pivoting, insertion, and lid-closing. 
+        All three tasks require tactile reasoning and begin from a non-contact state, either between the fingertip and the object or between a randomly grasped 
+        object and the environment. The pivoting and insertion tasks evaluate generalization to unseen objects within the same task, 
+        while the lid closing task additionally tests our alignment module's generalization to an unseen task class not used during training.
+      </p>
+      <p>
+        For each task, we collect 140–160 human demonstrations, where 100 demonstrations (≈ 30 minutes) 
+        are from the same object seen by the robot ("seen-to-both" object), and 20 demonstrations are collected for each additional 
+        "human-only" object (≈ 5 minutes per object). For robot data, we collect 50 via kinesthetic using a single training object (≈ 60 minutes).
+      </p>
+    </div>
+
+    <!-- Task Tabs -->
+    <div class="tabs is-centered is-boxed is-medium" id="task-tabs">
+      <ul>
+        <li class="is-active" data-task="pivoting"><a>Pivoting</a></li>
+        <li data-task="insertion"><a>Insertion</a></li>
+        <li data-task="lid_closing"><a>Lid Closing</a></li>
+      </ul>
+    </div>
+
+    <!-- Object Selector -->
+    <div class="buttons is-centered" id="object-buttons" style="margin-top:1.5rem;margin-bottom:1rem;">
+      <!-- Pivoting objects -->
+      <button class="button" data-task="pivoting" data-obj="cheezeit" data-speed="2x" data-cat="seen" style="border:2px solid #48c774;color:#48c774;background:transparent;">Cheez-It</button>
+      <button class="button" data-task="pivoting" data-obj="z" data-speed="4x" data-cat="human" style="border:2px solid #d4a017;color:#d4a017;background:transparent;">Z Block</button>
+      <button class="button" data-task="pivoting" data-obj="tissue" data-speed="2x" data-cat="human" style="border:2px solid #d4a017;color:#d4a017;background:transparent;">Tissue</button>
+      <button class="button" data-task="pivoting" data-obj="tape" data-speed="2x" data-cat="unseen" style="background:#f14668;color:#fff;border:2px solid #f14668;">Tape</button>
+      <button class="button" data-task="pivoting" data-obj="spray" data-speed="2x" data-cat="unseen" style="background:#f14668;color:#fff;border:2px solid #f14668;">Spray</button>
+      <button class="button" data-task="pivoting" data-obj="xela" data-speed="4x" data-cat="unseen" style="border:2px solid #f14668;color:#f14668;background:transparent;">Xela</button>
+      <!-- Insertion objects -->
+      <button class="button" data-task="insertion" data-obj="rvp" data-speed="4x" data-cat="seen" style="display:none;border:2px solid #f14668;color:#f14668;background:transparent;">RVP</button>
+      <button class="button" data-task="insertion" data-obj="cana" data-speed="4x" data-cat="human" style="display:none;border:2px solid #f14668;color:#f14668;background:transparent;">Cana</button>
+      <button class="button" data-task="insertion" data-obj="mac" data-speed="1x" data-cat="human" style="display:none;background:#f14668;color:#fff;border:2px solid #f14668;">Mac</button>
+      <button class="button" data-task="insertion" data-obj="belkin" data-speed="4x" data-cat="unseen" style="display:none;border:2px solid #f14668;color:#f14668;background:transparent;">Belkin</button>
+      <button class="button" data-task="insertion" data-obj="fnrsi" data-speed="1x" data-cat="unseen" style="display:none;border:2px solid #f14668;color:#f14668;background:transparent;">FNR SI</button>
+      <!-- Lid Closing objects -->
+      <button class="button" data-task="lid_closing" data-obj="haweek" data-speed="8x" data-cat="seen" style="display:none;border:2px solid #48c774;color:#48c774;background:transparent;">Haweek</button>
+      <button class="button" data-task="lid_closing" data-obj="cyxw" data-speed="8x" data-cat="human" style="display:none;border:2px solid #48c774;color:#48c774;background:transparent;">Cyxw</button>
+      <button class="button" data-task="lid_closing" data-obj="energify" data-speed="8x" data-cat="unseen" style="display:none;background:#48c774;color:#fff;border:2px solid #48c774;">Energify</button>
+    </div>
+
+    <!-- Legend -->
+    <div class="has-text-centered" style="margin-bottom:1rem;">
+      <span style="display:inline-block;margin:0 12px;"><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#48c774;vertical-align:middle;margin-right:6px;"></span> Seen-by-both</span>
+      <span style="display:inline-block;margin:0 12px;"><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#ffdd57;vertical-align:middle;margin-right:6px;"></span> Human-only</span>
+      <span style="display:inline-block;margin:0 12px;"><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#f14668;vertical-align:middle;margin-right:6px;"></span> Unseen-by-both</span>
+    </div>
+
+    <!-- Speed indicator -->
+    <p id="speed-indicator" class="has-text-centered title is-6" style="margin-bottom:1.5rem;color:#555;">Video Speed: 2x</p>
+
+    <!-- 3-column comparison: Ours | Proprio | Robot Only -->
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <h4 class="title is-6" style="margin-bottom:0.75rem;color:#3273dc;">TactAlign (Ours)</h4>
+        <video id="vid-ours" autoplay controls muted loop playsinline style="width:100%;border-radius:8px;border:2px solid #3273dc;">
+          <source src="./static/media/pivoting/ours/spray_2x.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column has-text-centered">
+        <h4 class="title is-6" style="margin-bottom:0.75rem;color:#666;">No Tactile (Baseline)</h4>
+        <video id="vid-proprio" autoplay controls muted loop playsinline style="width:100%;border-radius:8px;border:2px solid #ccc;">
+          <source src="./static/media/pivoting/proprio/spray_2x.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column has-text-centered">
+        <h4 class="title is-6" style="margin-bottom:0.75rem;color:#666;">Robot Only (Baseline)</h4>
+        <video id="vid-robot" autoplay controls muted loop playsinline style="width:100%;border-radius:8px;border:2px solid #ccc;">
+          <source src="./static/media/pivoting/robot_only/spray_2x.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <script>
+    (function() {
+      // Video mappings: object -> { ours, proprio/no_tactile, robot_only }
+      var pivoting = {
+        cheezeit: { ours: 'cheezeit.mp4',   proprio: 'cheezeit_2x.mp4', robot: 'cheezeit.mp4' },
+        tape:     { ours: 'tape_2x.mp4',    proprio: 'tape_2x.mp4',    robot: 'tape_2x.mp4' },
+        z:        { ours: 'z_4x.mp4',       proprio: 'z_2x.mp4',       robot: 'z_2x.mp4' },
+        tissue:   { ours: 'tissue_2x.mp4',  proprio: 'tissue_2x.mp4',  robot: 'box.mp4' },
+        spray:    { ours: 'spray_2x.mp4',   proprio: 'spray_2x.mp4',   robot: 'spray_2x.mp4' },
+        xela:     { ours: 'xela_4x.mp4',    proprio: 'xela_4x.mp4',    robot: 'xela_box_4x.mp4' }
+      };
+
+      var insertion = {
+        belkin: { ours: 'belkin_4x_.mp4',   no_tactile: 'belkin_4x.mp4', robot: 'belkin_4x.mp4' },
+        cana:   { ours: 'cana_4x.mp4',      no_tactile: 'cana_4x.mp4',  robot: 'cana_4x.mp4' },
+        fnrsi:  { ours: 'fnrsi_1x.mp4',     no_tactile: 'fnrsi.mp4',    robot: 'fnrsi_4x.mp4' },
+        mac:    { ours: 'mac_1x.mp4',       no_tactile: 'mac_4x.mp4',   robot: 'mac_4x.mp4' },
+        rvp:    { ours: 'rvp_4x.mp4',       no_tactile: 'rvp_4x.mp4',   robot: 'rvp_4x.mp4' }
+      };
+
+      var lid_closing = {
+        haweek:   { ours: 'haweek.mp4',     proprio: 'haweek.mp4',     robot: 'haweek.mp4' },
+        cyxw:     { ours: 'cyxw.mp4',       proprio: 'cyxw.mp4',       robot: 'cyxw.mp4' },
+        energify: { ours: 'energify.mp4',   proprio: 'energify.mp4',   robot: 'energify.mp4' },
+      };
+
+      var currentTask = 'pivoting';
+      var currentBase = './static/media/pivoting/';
+      var currentData = pivoting;
+      var vidOurs   = document.getElementById('vid-ours');
+      var vidProp   = document.getElementById('vid-proprio');
+      var vidRobot  = document.getElementById('vid-robot');
+      var buttons   = document.querySelectorAll('#object-buttons .button');
+      var taskTabs   = document.querySelectorAll('#task-tabs li');
+      var speedLabel = document.getElementById('speed-indicator');
+      var catColors = { seen: '#48c774', human: '#d4a017', unseen: '#f14668' };
+
+      function setVideo(vidEl, folder, filename) {
+        if (!filename) {
+          vidEl.style.display = 'none';
+          return;
+        }
+        vidEl.style.display = '';
+        vidEl.querySelector('source').src = currentBase + folder + '/' + filename;
+        vidEl.load();
+        vidEl.play();
+      }
+
+      var defaultObjects = { pivoting: 'spray', insertion: 'mac', lid_closing: 'energify' };
+
+      function switchTask(task) {
+        currentTask = task;
+        if (task === 'pivoting') {
+          currentBase = './static/media/pivoting/';
+          currentData = pivoting;
+        } else if (task === 'insertion') {
+          currentBase = './static/media/insertion/';
+          currentData = insertion;
+        } else if (task === 'lid_closing') {
+          currentBase = './static/media/lid_closing/';
+          currentData = lid_closing;
+        }
+
+        // Show/hide object buttons based on task
+        buttons.forEach(function(btn) {
+          var btnTask = btn.getAttribute('data-task');
+          if (btnTask === task) {
+            btn.style.display = '';
+          } else {
+            btn.style.display = 'none';
+          }
+        });
+
+        // Update task tabs
+        taskTabs.forEach(function(tab) {
+          if (tab.getAttribute('data-task') === task) {
+            tab.classList.add('is-active');
+          } else {
+            tab.classList.remove('is-active');
+          }
+        });
+
+        // Select default object for the task
+        var defaultObj = defaultObjects[task];
+        if (defaultObj && currentData[defaultObj]) {
+          selectObject(defaultObj);
+        } else {
+          // Fallback to first object
+          var firstObj = Object.keys(currentData)[0];
+          if (firstObj) selectObject(firstObj);
+        }
+      }
+
+      function selectObject(obj) {
+        var data = currentData[obj];
+        if (!data) return;
+        
+        // For insertion, use 'no_tactile' folder instead of 'proprio'
+        // For lid_closing, use 'proprio' folder (same as pivoting)
+        var proprioFolder = currentTask === 'insertion' ? 'no_tactile' : 'proprio';
+        
+        setVideo(vidOurs,  'ours',       data.ours);
+        setVideo(vidProp,  proprioFolder, data.no_tactile || data.proprio);
+        setVideo(vidRobot, 'robot_only', data.robot);
+
+        // Reset all buttons to outlined
+        buttons.forEach(function(btn) {
+          if (btn.getAttribute('data-task') === currentTask) {
+            var c = catColors[btn.getAttribute('data-cat')] || '#ccc';
+            btn.style.background = 'transparent';
+            btn.style.color = c;
+            btn.style.borderColor = c;
+          }
+        });
+        // Fill the active button
+        var active = document.querySelector('#object-buttons .button[data-task="' + currentTask + '"][data-obj="' + obj + '"]');
+        if (active) {
+          var c = catColors[active.getAttribute('data-cat')] || '#ccc';
+          active.style.background = c;
+          active.style.color = '#fff';
+          active.style.borderColor = c;
+          var speed = active.getAttribute('data-speed') || '';
+          speedLabel.textContent = 'Video Speed: ' + speed;
+          speedLabel.className = 'has-text-centered title is-6';
+          speedLabel.style.marginBottom = '1.5rem';
+          speedLabel.style.color = '#555';
+        }
+      }
+
+      // Task tab click handlers
+      taskTabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          var task = this.getAttribute('data-task');
+          switchTask(task);
+        });
+      });
+
+      // Object button click handlers
+      buttons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var task = this.getAttribute('data-task');
+          if (task === currentTask) {
+            selectObject(this.getAttribute('data-obj'));
+          }
+        });
+      });
+
+      // Initialize with pivoting task
+      switchTask('pivoting');
+    })();
+    </script>
+
+    <!-- Co-training Summary Bar Graphs -->
+    <div style="margin-top:3rem;">
+      <h3 class="title is-4 has-text-centered">Co-training Results Summary</h3>
+      <div class="content has-text-justified" style="margin-top:1.5rem;margin-bottom:2rem;max-width:900px;margin-left:auto;margin-right:auto;">
+        <p class="is-size-6" style="color:#666;">
+          Comparison of co-training results across different methods: Robot-only (blue), Without Tactile (orange), Without Alignment (green), and TactAlign (red). 
+          Results are shown as average success rates and broken down by object categories (Seen by both, Seen by tactile, Held-out). 
+          We observe that augmenting robot training with human demonstrations, which are substantially easier to collect and ≈4× faster in our setting, 
+          markedly improves generalization to unseen objects.
+        </p>
+      </div>
+      <div class="columns is-centered" style="margin:0;gap:0;">
+        <div class="column is-one-third has-text-centered" style="padding-left:0.25rem;padding-right:0.5rem;">
+          <h4 class="title is-6" style="margin-bottom:0.75rem;">Average Success Rate</h4>
+          <img src="./static/media/images/average.png?v=2" alt="Average success rate bar graph" style="height:320px;width:auto;max-width:100%;display:block;margin:0 auto;">
+        </div>
+        <div class="column is-two-thirds has-text-centered" style="padding-left:0.5rem;padding-right:0.25rem;">
+          <h4 class="title is-6" style="margin-bottom:0.75rem;">Object-wise Success Rate</h4>
+          <img src="./static/media/images/object_wise.png?v=2" alt="Object-wise success rate bar graph" style="height:320px;width:auto;max-width:100%;display:block;margin:0 auto;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Zero-shot Human-to-Robot -->
+<section class="section" style="background:#fafafa;">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Zero-shot Human-to-Robot (No Robot Data)</h2>
+    <div class="content has-text-justified" style="margin-top:1.5rem;margin-bottom:2rem;max-width:900px;margin-left:auto;margin-right:auto;">
+      <p class="is-size-6" style="color:#666;">
+        Our light bulb screwing task highlights two key aspects of human-to-robot transfer: (1) the dexterity enabled by human demonstrations, 
+        in which demonstrators rely on tactile feedback to guide precise finger motions during screwing, 
+        and (2) zero-shot human-to-robot policy execution. Video Speed: 8x
+      </p>
+    </div>
+
+    <!-- Top row: Human Demo (full width, centered) -->
+    <div class="columns is-centered" style="margin-bottom:2rem;">
+      <div class="column is-half has-text-centered">
+        <h4 class="title is-6" style="margin-bottom:0.75rem;color:#333;">Human Demonstration</h4>
+        <video autoplay controls muted loop playsinline style="width:100%;border-radius:8px;border:2px solid #333;">
+          <source src="./static/media/screwing/demo_cropped.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <!-- Bottom row: 3 methods side by side -->
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <h4 class="title is-6" style="margin-bottom:0.75rem;color:#3273dc;">TactAlign (Ours)</h4>
+        <video autoplay controls muted loop playsinline style="width:100%;border-radius:8px;border:2px solid #3273dc;">
+          <source src="./static/media/screwing/ours_8x.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column has-text-centered">
+        <h4 class="title is-6" style="margin-bottom:0.75rem;color:#666;">No Alignment (Baseline)</h4>
+        <video autoplay controls muted loop playsinline style="width:100%;border-radius:8px;border:2px solid #ccc;">
+          <source src="./static/media/screwing/no_align_8x.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column has-text-centered">
+        <h4 class="title is-6" style="margin-bottom:0.75rem;color:#666;">No Tactile (Baseline)</h4>
+        <video autoplay controls muted loop playsinline style="width:100%;border-radius:8px;border:2px solid #ccc;">
+          <source src="./static/media/screwing/no_tactile_8x.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+    <h2 class="title is-3 has-text-centered">BibTeX</h2>
+    <pre><code>@article{tactalign,
+  author    = {Wi, Youngsun and Yin, Jessica and Xiang, Elvis and Sharma, Akash and Malik, Jitendra and Muskadam, Mustafa and Fazeli, Nima and Hellebrekers, Tess},
+  title     = {TactAlign: Human-to-Robot Policy Transfer via Tactile Alignment},
+  journal   = {arXiv},
+  year      = {2025},
 }</code></pre>
   </div>
 </section>
@@ -458,7 +678,7 @@
   <div class="container">
     <div class="content has-text-centered">
       <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
+         href="./static/videos/tactalign_paper.pdf">
         <i class="fas fa-file-pdf"></i>
       </a>
       <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
