@@ -1,6 +1,8 @@
 # Nerfies
 
-This is the repository that contains source code for the [Nerfies website](https://nerfies.github.io).
+This is the repository that contains source code for the [Nerfies website](https://young.github.io/tactalign.github.io).
+
+To have the site available at that URL, create a repository named `tactalign.github.io` under your GitHub user `young` and enable GitHub Pages for it.
 
 If you find Nerfies useful for your work please cite:
 ```
