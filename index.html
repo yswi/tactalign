@@ -86,7 +86,7 @@
             <span class="author-block">
               <a href="https://www.jessicayin.com/">Jessica Yin</a><sup>2</sup><sup style="font-style: normal;">†</sup>,</span>
             <span class="author-block">
-              <a href="">Elvis Xiang</a><sup>1</sup>,
+              <a href="https://elviskxiang.github.io/">Elvis Xiang</a><sup>1</sup>,
             </span>
             <span class="author-block">
               <a href="https://akashsharma02.github.io/">Akash Sharma</a><sup>3</sup><sup style="font-style: normal;">†</sup>,
@@ -424,7 +424,7 @@
     
     <div class="content has-text-justified" style="margin-top:1.5rem;margin-bottom:2rem;max-width:900px;margin-left:auto;margin-right:auto;">
       <p>
-        We evaluate the effectiveness of TactAlign for H2R policy co-training on three representative contact-rich manipulation tasks: pivoting, insertion, and lid-closing. 
+        We evaluate the effectiveness of TactAlign for H2R policy co-training on three representative contact-rich manipulation tasks: <em>pivoting, insertion, and lid-closing</em>. 
         All three tasks require tactile reasoning and begin from a non-contact state, either between the fingertip and the object or between a randomly grasped 
         object and the environment. The pivoting and insertion tasks evaluate generalization to unseen objects within the same task, 
         while the lid closing task additionally tests our alignment module's generalization to an unseen task class not used during training.
@@ -680,11 +680,37 @@
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Zero-shot Human-to-Robot (No Robot Data)</h2>
     <div class="content has-text-justified" style="margin-top:1.5rem;margin-bottom:2rem;max-width:900px;margin-left:auto;margin-right:auto;">
-      <p class="is-size-6" style="color:#666;">
-        Our light bulb screwing task highlights two key aspects of human-to-robot transfer: (1) the dexterity enabled by human demonstrations, 
-        in which demonstrators rely on tactile feedback to guide dexterous finger motions during screwing, 
-        and (2) zero-shot human-to-robot policy execution. (Demo Speed: 2x, Video Speed: 8x)
+      <p class="lead">
+        TactAlign enables <em>dexterous, zero-shot, and generalizable</em> 
+        human-to-robot transfer with touch. The light bulb screwing task highlights the following key aspects:
       </p>
+    
+      <ul>
+        <li>
+          <strong>Human-level dexterity:</strong> Demonstrators rely on rich tactile feedback 
+          to guide precise finger motions during screwing.
+        </li>
+        <li>
+          <strong>Zero-shot policy transfer:</strong> The robot executes the task without 
+          task-specific robot demonstrations.
+        </li>
+        <li>
+          <strong>TactAlign's task-level generalization:</strong> We <em>re-use</em> tactile alignment 
+          learned from pivoting and insertion.
+        </li>
+        <li>
+          <strong>Fast data collection:</strong> 20 human demonstrations in ~10 minutes.
+        </li>
+      </ul>
+    
+      <!-- <p class="is-size-6" style="color:#666;">
+        Our light-bulb screwing task highlights three aspects of human-to-robot transfer: 
+        (1) the dexterity of human demonstrations, where demonstrators leverage tactile feedback to guide dexterous finger motions during screwing; 
+        (2) zero-shot human-to-robot policy transfer; and 
+        (3) task-level generalization of our alignment module by re-using the tactile alignment learned from pivoting and insertion on 
+        shared objects. For training, we collect 20 human demonstrations in approximately 10 minutes, underscoring the 
+        efficiency of data collection. (Demo Speed: 2×, Video Speed: 8×).
+      </p> -->
     </div>
 
     <!-- Top row: Human Demo (full width, centered) -->
