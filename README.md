@@ -1,6 +1,6 @@
 # TactAlign
 
-This is the repository that contains source code for the TactAlign website.
+This is the repository that contains source code for the [Nerfies website](https://yswi.github.io/tactalign).
 
 Enable GitHub Pages for this repo (Settings → Pages → source: main branch) to view the site at that URL.
 
