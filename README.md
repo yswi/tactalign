@@ -1,6 +1,6 @@
 # TactAlign
 
-This is the repository that contains source code for the [TactAlign website](https://tactalign.github.io).
+This is the repository that contains source code for the TactAlign website.
 
 Enable GitHub Pages for this repo (Settings → Pages → source: main branch) to view the site at that URL.
 
