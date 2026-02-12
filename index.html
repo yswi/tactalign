@@ -230,7 +230,7 @@
             However, a key challenge is how to transfer human-collected tactile signals to robots despite the differences in 
             sensing modalities and embodiment. Existing human-to-robot (H2R) approaches that incorporate touch often assume 
             identical tactile sensors, require paired data, and involve little to no embodiment gap between human demonstrator 
-            and the robots, limiting scalability and generality. TactAlign transforms human and robot tactile observations into 
+            and the robots, limiting scalability and generality. <span class="dnerf">TactAlign</span> transforms human and robot tactile observations into 
             an shared latent representation using a rectified flow, without paired datasets, manual labels, or privileged information. 
             Our method enables low-cost latent transport guided by hand-object interaction-derived pseudo-pairs.
           </p>
@@ -424,7 +424,7 @@
     
     <div class="content has-text-justified" style="margin-top:1.5rem;margin-bottom:2rem;max-width:900px;margin-left:auto;margin-right:auto;">
       <p>
-        We evaluate the effectiveness of TactAlign for H2R policy co-training on three representative contact-rich manipulation tasks: <em>pivoting, insertion, and lid-closing</em>. 
+        We evaluate the effectiveness of <span class="dnerf">TactAlign</span> for H2R policy co-training on three representative contact-rich manipulation tasks: <em>pivoting, insertion, and lid-closing</em>. 
         All three tasks require tactile reasoning and begin from a non-contact state, either between the fingertip and the object or between a randomly grasped 
         object and the environment. The pivoting and insertion tasks evaluate generalization to unseen objects within the same task, 
         while the lid closing task additionally tests our alignment module's generalization to an unseen task class not used during training.
@@ -681,7 +681,7 @@
     <h2 class="title is-3 has-text-centered">Zero-shot Human-to-Robot (No Robot Data)</h2>
     <div class="content has-text-justified" style="margin-top:1.5rem;margin-bottom:2rem;max-width:900px;margin-left:auto;margin-right:auto;">
       <p class="lead">
-        TactAlign enables <em>dexterous, zero-shot, and generalizable</em> 
+        <span class="dnerf">TactAlign</span> enables <em>dexterous, zero-shot, and generalizable</em> 
         human-to-robot transfer with touch. The light bulb screwing task highlights the following key aspects:
       </p>
     
